@@ -6,15 +6,26 @@
 </head>
 <body class="p-4">
     <h1>Fancontrol Dashboard</h1>
-    <table class="table table-bordered mt-4">
-        <thead><tr><th>Machine</th><th>Actions</th></tr></thead>
+    <a href="{{ url_for('edit_agents') }}" class="btn btn-secondary mb-3">Modifier les agents</a>
+    <table class="table table-bordered">
+        <thead><tr><th>Machine</th><th>État du service</th><th>Actions</th></tr></thead>
         <tbody>
             {% for name, url in agents.items() %}
             <tr>
-                <td>{{ name }}</td>
+                <td>{{ name }}<br><small>{{ url }}</small></td>
+                <td>
+                    {% if status[name] == "active" %}
+                        <span class="badge bg-success">Actif</span>
+                    {% elif status[name] == "inactive" %}
+                        <span class="badge bg-danger">Inactif</span>
+                    {% else %}
+                        <span class="badge bg-secondary">{{ status[name] }}</span>
+                    {% endif %}
+                </td>
                 <td>
                     <a href="{{ url_for('sensors', agent=name) }}" class="btn btn-info btn-sm">Voir capteurs</a>
-                    <a href="{{ url_for('control_service', agent=name, action='restart') }}" class="btn btn-warning btn-sm">Redémarrer fancontrol</a>
+                    <a href="{{ url_for('edit_config', agent=name) }}" class="btn btn-primary btn-sm">Modifier config</a>
+                    <a href="{{ url_for('control_service', agent=name, action='restart') }}" class="btn btn-warning btn-sm">Redémarrer</a>
                 </td>
             </tr>
             {% endfor %}

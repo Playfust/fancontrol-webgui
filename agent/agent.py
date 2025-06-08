@@ -19,6 +19,9 @@ def control_service():
     action = request.json.get('action')
     if action not in ['start', 'stop', 'restart']:
         return jsonify({'error': 'Invalid action'}), 400
+    elif action == "status":
+        result = subprocess.getoutput("systemctl is-active fancontrol")
+        return jsonify({"status": result.strip()})
     subprocess.call(['sudo', 'systemctl', action, 'fancontrol'])
     return jsonify({'status': f'{action} sent'})
 
