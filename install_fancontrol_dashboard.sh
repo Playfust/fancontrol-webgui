@@ -15,7 +15,7 @@ wget -O fancontrol-webgui.zip https://github.com/Playfust/fancontrol-webgui/arch
 echo "📦 Extraction..."
 unzip fancontrol-webgui.zip
 rm fancontrol-webgui.zip
-mv fancontrol-webgui-0.1 ./fancontrol-webgui
+mv fancontrol-webgui-0.2 ./fancontrol-webgui
 cd fancontrol-webgui
 
 echo "🐍 Création de l'environnement virtuel..."
