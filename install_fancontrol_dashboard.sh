@@ -10,7 +10,7 @@ echo "📁 Création du dossier pour le dashboard..."
 cd /opt
 
 echo "⬇️ Téléchargement de l'archive ZIP..."
-wget -O fancontrol-webgui.zip https://github.com/Playfust/fancontrol-webgui/archive/refs/tags/v0.1.zip
+wget -O fancontrol-webgui.zip https://github.com/Playfust/fancontrol-webgui/archive/refs/tags/v0.2.zip
 
 echo "📦 Extraction..."
 unzip fancontrol-webgui.zip
