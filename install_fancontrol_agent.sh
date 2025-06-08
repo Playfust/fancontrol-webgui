@@ -8,7 +8,7 @@ apt install -y python3 python3-pip python3-venv unzip wget
 cd /opt
 
 echo "⬇️ Téléchargement de l'archive ZIP..."
-wget -O fancontrol-agent.zip https://github.com/Playfust/fancontrol-webgui/releases/download/v0.2/agent.zip
+wget -O fancontrol-agent.zip https://github.com/Playfust/fancontrol-webgui/releases/download/v0.2/fancontrol-agent.zip
 
 echo "📦 Extraction..."
 unzip fancontrol-agent.zip

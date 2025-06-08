@@ -8,11 +8,11 @@ apt install -y unzip python3 python3-pip python3-venv wget
 cd /opt
 
 echo "⬇️ Téléchargement de l'archive ZIP..."
-wget -O fancontrol-webgui.zip https://github.com/Playfust/fancontrol-webgui/releases/download/v0.2/dashboard.zip
+wget -O fancontrol-webgui.zip https://github.com/Playfust/fancontrol-webgui/releases/download/v0.2/fancontrol-dashboard.zip
 
 echo "📦 Extraction..."
-unzip fancontrol-webgui.zip
-rm fancontrol-webgui.zip
+unzip fancontrol-dashboard.zip
+rm fancontrol-dashboard.zip
 mv dashboard ./fancontrol-webgui
 cd fancontrol-webgui
 
