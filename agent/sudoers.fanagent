@@ -1,0 +1,1 @@
+fanagent ALL=(ALL) NOPASSWD: /bin/systemctl start fancontrol, /bin/systemctl stop fancontrol, /bin/systemctl restart fancontrol, /usr/bin/cat /etc/fancontrol, /usr/bin/tee /etc/fancontrol
