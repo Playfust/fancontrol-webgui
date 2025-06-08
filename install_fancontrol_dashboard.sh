@@ -5,17 +5,15 @@ set -e
 echo "📦 Mise à jour des paquets..."
 apt update
 apt install -y unzip python3 python3-pip python3-venv wget
-
-echo "📁 Création du dossier pour le dashboard..."
 cd /opt
 
 echo "⬇️ Téléchargement de l'archive ZIP..."
-wget -O fancontrol-webgui.zip https://github.com/Playfust/fancontrol-webgui/archive/refs/tags/v0.2.zip
+wget -O fancontrol-webgui.zip https://github.com/Playfust/fancontrol-webgui/releases/download/v0.2/dashboard.zip
 
 echo "📦 Extraction..."
 unzip fancontrol-webgui.zip
 rm fancontrol-webgui.zip
-mv fancontrol-webgui-0.2 ./fancontrol-webgui
+mv dashboard ./fancontrol-webgui
 cd fancontrol-webgui
 
 echo "🐍 Création de l'environnement virtuel..."

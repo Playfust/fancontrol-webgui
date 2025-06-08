@@ -5,18 +5,16 @@ set -e
 echo "📦 Mise à jour des paquets..."
 apt update
 apt install -y python3 python3-pip python3-venv unzip wget
-
-echo "📁 Création du dossier pour l'agent..."
 cd /opt
-mkdir -p fancontrol-agent
-cd fancontrol-agent
 
 echo "⬇️ Téléchargement de l'archive ZIP..."
-wget -O fancontrol-agent.zip http://<TO_REPLACE>/fancontrol-agent.zip
+wget -O fancontrol-agent.zip https://github.com/Playfust/fancontrol-webgui/releases/download/v0.2/agent.zip
 
 echo "📦 Extraction..."
 unzip fancontrol-agent.zip
 rm fancontrol-agent.zip
+mv agent ./fancontrol-agent
+cd fancontrol-agent
 
 echo "👤 Création de l'utilisateur fanagent..."
 id fanagent &>/dev/null || useradd -r -s /usr/sbin/nologin fanagent
