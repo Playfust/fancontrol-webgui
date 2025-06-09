@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifier les agents</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+    <h2>Modifier les agents</h2>
+    <form method="post">
+        <div id="agents-list">
+            {% for name, url in agents.items() %}
+            <div class="row mb-2">
+                <div class="col"><input class="form-control" name="name" value="{{ name }}"></div>
+                <div class="col"><input class="form-control" name="url" value="{{ url }}"></div>
+            </div>
+            {% endfor %}
+            <div class="row mb-2">
+                <div class="col"><input class="form-control" name="name" placeholder="Nom de la machine"></div>
+                <div class="col"><input class="form-control" name="url" placeholder="http://ip:5001"></div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Enregistrer</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Annuler</a>
+    </form>
+</body>
+</html>
